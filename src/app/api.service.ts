@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { API_ENDPOINTS, APP_CONFIG } from './constants';
+import { API, APP_CONFIG } from './constants';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  get(url: string, body?: any, params?: any): Observable<any> {
+  makeRequest(type:String,url:string, body?: any, params?: any): Observable<any> {
+    let baseUrl=API.baseUrl
+    url=baseUrl+url
     let options = {};
 
     if (params) {
@@ -25,10 +27,22 @@ export class ApiService {
     if (body) {
       options = { ...options, body };
     }
-
+    if(type.toLocaleLowerCase()=="put"){
+      return this.http.put(url,body, options);
+    }
+    else if(type.toLocaleLowerCase()=="post"){
+      console.warn(url,options)
+      return this.http.post(url,body, options);
+    }
+    else if(type.toLocaleLowerCase()=="delete"){
+      return this.http.delete(url, options);
+    }
+    
     return this.http.get(url, options);
+    
   }
 
-  // Aggiungi altri metodi per le chiamate REST necessarie
+  
+  
 
 }
