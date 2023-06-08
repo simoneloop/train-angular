@@ -1,13 +1,10 @@
-export const API = {
-  baseUrl:'http://localhost:8080',
-  users: '/users',
-  products: '/products',
-  getAll:"/getAll",
-  add:"/add"
-  // Altre costanti relative agli endpoint API
-};
+export const API={
+    baseUrl:'http://localhost:8080',
+    users:"/users",
+    product:"/product",
+    add:"/add",
+    getAll:"/getAll"
+}
+export const APP_CONFIG={
 
-export const APP_CONFIG = {
-  // Configurazioni generali dell'applicazione
-  // ...
-};
+}
