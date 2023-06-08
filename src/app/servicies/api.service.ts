@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { API} from './constants';
+import { API} from '../constants';
 
 @Injectable({
   providedIn: 'root'
@@ -34,12 +34,12 @@ export class ApiService {
       }
     }
 
-   
+
     if(type.toLocaleLowerCase()=='delete'){
       return this.http.delete(url,options);
     }
     return this.http.get(url,options);
-    
+
 
 
   }
