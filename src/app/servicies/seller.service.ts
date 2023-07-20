@@ -13,18 +13,27 @@ export class SellerService {
   constructor(private apiService:ApiService,private router:Router) { }
 
   signUp(data:object):void{
-    let result=this.apiService.makeRequest("post",API.users+API.add,data)
+    let result=this.apiService.makeRequest("post",API.users+API.addAdmin,data)
     result.subscribe((response)=>{
       //controlli
-      if(response.body){
-        this.isSellerLoggedIn.next(true)
-        localStorage.setItem('seller',response.body)
-        this.router.navigate(['seller-home']);
+      localStorage.setItem('seller',JSON.stringify(response))
+      this.isSellerLoggedIn.next(true)
 
-      }
+      this.router.navigate(['seller-home']);
+      
 
 
     })
+    
 
+  }
+
+  reloadSeller():void{
+    if(localStorage.getItem('seller')){
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['seller-home']);
+
+
+    }
   }
 }

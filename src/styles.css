@@ -25,3 +25,7 @@ body{
   background-color: darkcyan;
   font-weight: 700;
 }
+.errors{
+  color: darkcyan;
+  margin-bottom: 20px;
+}

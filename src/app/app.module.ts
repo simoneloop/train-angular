@@ -8,9 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 @NgModule({
@@ -21,13 +22,16 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
     SellerAuthComponent,
     LoginComponent,
     CartComponent,
-    SellerHomeComponent
+    SellerHomeComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
