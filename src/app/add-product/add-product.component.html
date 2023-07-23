@@ -1,29 +1,30 @@
-<div class="add-product">
-    <h1>Aggiungi prodotto</h1>
+<div class="add-product" appHighlight succes="true">
+    <h1 >Aggiungi prodotto</h1>
     <form [formGroup]="productForm" class="common-form">
         <div>
-            <input class="form-input" type="text" formControlName="name" placeholder="Inserisci il nome">
-            <div *ngIf="productForm.get('name')!.invalid ||(productForm.get('name')!.dirty || productForm.get('name')!.touched)">
+            
+            <input class="form-input" type="text" formControlName="name" placeholder="inserisci il nome">
+            <div *ngIf="productForm.get('name')!.invalid">
                 <div class="errors" *ngIf="productForm.get('name')!.errors?.['required']">Inserisci un nome</div>
-                <div class="errors" *ngIf="productForm.get('name')!.errors?.['pattern']">Inserisci un nome valido</div>
-
+                <div class="errors" *ngIf="productForm.get('name')!.errors?.['pattern']">Puoi inserire solo lettere</div>
             </div>
         </div>
         <div>
-            <input class="form-input" type="text" formControlName="typo" placeholder="Inserisci la categoria">
-            <div *ngIf="productForm['status']=='INVALID'">
+            
+            <input class="form-input" type="text" formControlName="typo" placeholder="inserisci la categoria">
+            <div *ngIf="productForm.get('typo')!.invalid">
                 <div class="errors" *ngIf="productForm.get('typo')!.errors?.['required']">Inserisci una categoria</div>
-                <div class="errors" *ngIf="productForm.get('typo')!.errors?.['pattern']">Inserisci una categoria valida</div>
+                <div class="errors" *ngIf="productForm.get('typo')!.errors?.['pattern']">Puoi inserire solo lettere</div>
             </div>
         </div>
         <div>
-            <input class="form-input" type="number" formControlName="quantity" placeholder="Inserisci la quantità">
-            <div *ngIf="productForm['status']=='INVALID'">
-                <div class="errors" *ngIf="productForm.get('quantity')!.errors?.['required']">La quantità è obbligatoria.</div>
-                <div class="errors" *ngIf="productForm.get('quantity')!.errors?.['pattern']">La quantità deve essere un numero intero positivo.</div>
+            
+            <input class="form-input" type="number" formControlName="quantity" placeholder="inserisci la quantità">
+            <div *ngIf="productForm.get('quantity')!.invalid">
+                <div class="errors" *ngIf="productForm.get('quantity')!.errors?.['required']">Inserisci la quantità</div>
+                <div class="errors" *ngIf="productForm.get('quantity')!.errors?.['pattern']">Puoi inserire solo numeri positivi</div>
             </div>
         </div>
-        <button (click)="addProduct()">Aggiungi prodotto</button>
-    </form>
+        <button class="form-button" (click)="addProduct()">Aggiungi prodotto</button>
+    </form>    
 </div>
-

@@ -1,0 +1,21 @@
+.add-product{
+    border: solid 2px darkcyan;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    float: left;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.add-product h1{
+    color: darkcyan;
+  }
+
+.highlight{
+    box-shadow: 2px 2px 15px rgba(0, 100, 0, 1);
+    transform: scale(1.01);
+}
+.highlightError{
+    box-shadow: 2px 2px 15px rgb(100, 0, 0);
+    transform: scale(1.01);
+}

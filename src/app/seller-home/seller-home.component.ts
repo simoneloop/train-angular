@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../servicies/seller.service';
+import { Product } from '../dataTypes';
+import { ProductService } from '../servicies/product.service';
 
 @Component({
   selector: 'app-seller-home',
@@ -8,10 +10,13 @@ import { SellerService } from '../servicies/seller.service';
 })
 export class SellerHomeComponent implements OnInit {
 
-  constructor(private sellerService:SellerService) { }
+  
+  constructor(private sellerService:SellerService,public productService:ProductService) { }
 
   ngOnInit(): void {
-  
+    
   }
+
+  
 
 }

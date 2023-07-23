@@ -1,2 +1,12 @@
 <p>seller-home works!</p>
-<app-add-product></app-add-product>
+<div class="body">
+    <app-add-product></app-add-product>
+    <div class="productList">
+        <div class="product" *ngFor="let el of productService.productList">
+            <p>{{el.name}}</p>
+            <p>{{el.typo}}</p>
+            <p>{{el.quantity}}</p>
+        </div>
+    </div>
+    
+</div>

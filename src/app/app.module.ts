@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     LoginComponent,
     CartComponent,
     SellerHomeComponent,
-    AddProductComponent
+    AddProductComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

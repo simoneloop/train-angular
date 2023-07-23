@@ -5,7 +5,9 @@ export const API={
     add:"/add",
     addAdmin:"/addAdmin",
     getAll:"/getAll",
-    login:"/login"
+    login:"/login",
+    addProduct:"/add"
+
 }
 export const APP_CONFIG={
 

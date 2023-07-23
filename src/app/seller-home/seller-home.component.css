@@ -1,0 +1,11 @@
+.body{
+    display: flex;
+    justify-content: space-around;
+}
+.productList{
+    display: flex;
+    flex-direction: column;
+}
+.product{
+    border: solid;
+}
